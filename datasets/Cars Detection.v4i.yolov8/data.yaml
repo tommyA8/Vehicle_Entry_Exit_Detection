@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['bike', 'bus', 'car', 'truck']
+
+roboflow:
+  workspace: tommya8-yyxnu
+  project: cars-detection-lq124
+  version: 4
+  license: MIT
+  url: https://universe.roboflow.com/tommya8-yyxnu/cars-detection-lq124/dataset/4

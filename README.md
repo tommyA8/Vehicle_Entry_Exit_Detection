@@ -35,7 +35,7 @@ here is my custom dataset https://app.roboflow.com/tommya8-yyxnu/cars-detection-
         "Class_out": [],
     }
     df = pd.DataFrame(data)
-    df.to_csv(f'./outputs/vehicle_entry_exit_detection_{video_name}.csv')
+    df.to_csv(f'./outputs/vehicle_entry_exit_detection_{video_name}.csv', index=False)
     ```
 # Final Result
 - Output Video

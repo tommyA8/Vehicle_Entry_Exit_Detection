@@ -11,7 +11,7 @@ model_path = f'./yolov8n_custom_model/runs_datasetv4/detect/{check_point}/weight
 model = YOLO(model_path)  # load a custom model
 
 # Load a video
-video_name = 'IMG_4598'
+video_name = 'IMG_4599'
 video_path = f'./videos/{video_name}.MOV'
 cap = cv2.VideoCapture(video_path)
 assert cap.isOpened(), "Error reading video file"
@@ -164,5 +164,5 @@ cv2.destroyAllWindows()
 # show DataFrame (Output)
 df = pd.DataFrame(data)
 # print(df.info)
-df.to_csv(f'./outputs/vehicle_entry_exit_detection_{video_name}.csv')
+df.to_csv(f'./outputs/vehicle_entry_exit_detection_{video_name}.csv', index=False)
 

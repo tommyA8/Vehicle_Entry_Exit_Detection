@@ -23,7 +23,7 @@ here is my custom dataset https://app.roboflow.com/tommya8-yyxnu/cars-detection-
 <p align="center">
 <img src="https://github.com/tommyA8/Vehicle_Entry_Exit_Detection/blob/main/images/detected_tracked.jpeg?raw=true" width="490" height="300"/>
 
-- Count the number of vehicles that enter the ROI
+- Count the number of vehicles that enter/exit the ROI
 <p align="center">
 <img src="https://github.com/tommyA8/Vehicle_Entry_Exit_Detection/blob/main/images/counting.jpeg?raw=true" width="490" height="300"/>
 

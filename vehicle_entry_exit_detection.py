@@ -11,7 +11,7 @@ model_path = f'./yolov8n_custom_model/runs_datasetv4/detect/{check_point}/weight
 model = YOLO(model_path)  # load a custom model
 
 # Load a video
-video_name = 'IMG_4599'
+video_name = 'IMG_4598'
 video_path = f'./videos/{video_name}.MOV'
 cap = cv2.VideoCapture(video_path)
 assert cap.isOpened(), "Error reading video file"
@@ -108,9 +108,9 @@ while True:
         """
         Entering and leaving
         """
-        offset = 3
+        offset = 15
         # Entering
-        if cx > verticle_line and cy > horizontal_line + offset: 
+        if cx > verticle_line and cy > horizontal_line and cy < horizontal_line + offset:
             # check if vehicle already in
             if id not in already_in_IDs:
                 count_in += 1
@@ -121,7 +121,7 @@ while True:
             already_in_IDs.add(id)
 
         # Leaving
-        if cx < verticle_line and cy < horizontal_line - offset: 
+        if cx < verticle_line and cy > horizontal_line and cy < horizontal_line + offset:
             # check if vehicle already out
             if id not in already_out_IDs:
                 count_out += 1
@@ -142,8 +142,10 @@ while True:
     cv2.putText(frame, f"OUT:{count_out}", (0, horizontal_line-5),
                 cv2.FONT_HERSHEY_DUPLEX, 0.7, info_color, info_thickness)
     # counting region
-    cv2.line(frame, (0, horizontal_line), (width, horizontal_line), info_color, info_thickness) # horizontal line
-    #cv2.line(frame, (verticle_line, 0), (verticle_line, height), (0,0,255), 2 ) # vertical line
+    overlay = frame.copy()
+    cv2.rectangle(frame, (0, horizontal_line), (width, horizontal_line + offset), info_color, -1)
+    frame = cv2.addWeighted(overlay, 0.4, frame, 1 - 0.4, 0)
+    cv2.line(frame, (verticle_line, 0), (verticle_line, height), info_color, info_thickness) # vertical line
     # show date time
     cv2.putText(frame, date_time, (15, 20), 
                  cv2.FONT_HERSHEY_DUPLEX, 0.6, info_color, info_thickness)

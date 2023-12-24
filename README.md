@@ -7,7 +7,7 @@ here is my custom dataset https://app.roboflow.com/tommya8-yyxnu/cars-detection-
 - Using `200 Epochs` with `AdamW`
 
 <p align="center">
-<img src="https://github.com/tommyA8/Vehicle_Entry_Exit_Detection/blob/main/yolov8n_custom_model/runs_datasetv4/detect/train2/confusion_matrix_normalized.png?raw=true" width="700" height="600"/>
+<img src="https://github.com/tommyA8/Vehicle_Entry_Exit_Detection/blob/main/yolov8n_custom_model/runs_datasetv4/detect/train2/confusion_matrix_normalized.png?raw=true" width="700" height="500"/>
 <p align="center">Confusion Matrix Normalized
 
 # Vehicle Entry and Exit Detection

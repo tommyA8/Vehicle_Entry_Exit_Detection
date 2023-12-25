@@ -164,5 +164,5 @@ cv2.destroyAllWindows()
 # show DataFrame (Output)
 df = pd.DataFrame(data)
 # print(df.info)
-df.to_csv(f'./outputs/vehicle_entry_exit_detection_{video_name}.csv', index=False)
+df.to_csv(f'./outputs/OUTPUT_TABLE_{video_name}.csv', index=False)
 
